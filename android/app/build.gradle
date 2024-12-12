@@ -1,33 +1,12 @@
-plugins {
-    id "com.android.application"
-    id "org.jetbrains.kotlin.android"
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
 android {
-    namespace = "com.example.herbalhub"
-    compileSdkVersion 34 // Updated to the latest SDK version
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.example.herbalhub"
-        minSdkVersion 21 // Keeps the minimum SDK version at 21
-        targetSdkVersion 34 // Updated to the latest SDK version
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 21
+        targetSdkVersion 33
     }
+}
 
-    buildTypes {
-        release {
-            signingConfig signingConfigs.debug
-        }
-    }
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
 }

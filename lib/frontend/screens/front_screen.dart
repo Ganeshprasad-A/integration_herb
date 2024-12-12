@@ -1,10 +1,9 @@
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'herb_details_screen.dart';
 // Import CategoriesScreen to allow navigation
 import 'package:herbalhub/frontend/screens/categories_screen.dart';
 
@@ -73,13 +72,7 @@ class _FrontScreenState extends State<FrontScreen> {
           IconButton(
             icon: const Icon(Icons.bookmark_outline, color: Colors.black),
             onPressed: () {
-              // Navigate to Bookmarked Plants Screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const BookmarkedPlantsScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/login');
             },
           ),
           IconButton(
@@ -110,7 +103,6 @@ class _FrontScreenState extends State<FrontScreen> {
                     prefixIcon: Icon(Icons.search, color: Colors.green[800]),
                     suffixIcon: GestureDetector(
                       onTap: () {
-                        // Navigate to the CategoriesScreen when the filter icon is tapped
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -140,13 +132,57 @@ class _FrontScreenState extends State<FrontScreen> {
                 child: Row(
                   children: [
                     buildPlantCard(
-                        'Ashwagandha', 'lib/frontend/assets/images/Ashwagandha.jpg'),
+                      'Aloe Vera',
+                      'lib/frontend/assets/images/alo.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Aloe Vera'),
+                          ),
+                        );
+                      },
+                    ),
                     buildPlantCard(
-                        'Amla', 'lib/frontend/assets/images/Amla.jpg'),
+                      'Amla',
+                      'lib/frontend/assets/images/Amla.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Amla'),
+                          ),
+                        );
+                      },
+                    ),
                     buildPlantCard(
-                        'Turmeric', 'lib/frontend/assets/images/turmeric.jpg'),
+                      'Turmeric',
+                      'lib/frontend/assets/images/turmeric.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Turmeric'),
+                          ),
+                        );
+                      },
+                    ),
                     buildPlantCard(
-                        'Fenugreek', 'lib/frontend/assets/images/Fenugreek.jpg'),
+                      'Fenugreek',
+                      'lib/frontend/assets/images/Fenugreek.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Fenugreek'),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -167,13 +203,57 @@ class _FrontScreenState extends State<FrontScreen> {
                 child: Row(
                   children: [
                     buildPlantCard(
-                        'Kutki', 'lib/frontend/assets/images/Kutki.jpg'),
+                      'Kutki',
+                      'lib/frontend/assets/images/Kutki.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HerbDetailsScreen(
+                                herbName: 'Kutki (Indian Kudzu)'),
+                          ),
+                        );
+                      },
+                    ),
                     buildPlantCard(
-                        'Aloe Vera', 'lib/frontend/assets/images/aloevera.jpeg'),
+                      'Ashwagandha',
+                      'lib/frontend/assets/images/Ashwagandha.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Ashwagandha'),
+                          ),
+                        );
+                      },
+                    ),
                     buildPlantCard(
-                        'Mexican Mint', 'lib/frontend/assets/images/Mexican_Mint.jpg'),
+                      'Mexican Mint',
+                      'lib/frontend/assets/images/Mexican_Mint.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Mexican mint'),
+                          ),
+                        );
+                      },
+                    ),
                     buildPlantCard(
-                        'Sarpagandha', 'lib/frontend/assets/images/Sarpagandha.jpg'),
+                      'Sarpagandha',
+                      'lib/frontend/assets/images/Sarpagandha.jpg',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                HerbDetailsScreen(herbName: 'Sarpagandha'),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -190,14 +270,49 @@ class _FrontScreenState extends State<FrontScreen> {
               ),
               const SizedBox(height: 10),
               buildPlantCard(
-                  'Jatamansi', 'lib/frontend/assets/images/Jatamansi.jpg',
-                  width: double.infinity),
+                'Jatamansi',
+                'lib/frontend/assets/images/Jatamansi.jpg',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          HerbDetailsScreen(herbName: 'Aloe Vera'),
+                    ),
+                  );
+                },
+                width: double.infinity,
+              ),
               const SizedBox(height: 10),
-              buildPlantCard('Brahmi', 'lib/frontend/assets/images/Brahmi.jpg',
-                  width: double.infinity),
+              buildPlantCard(
+                'Brahmi',
+                'lib/frontend/assets/images/Brahmi.jpg',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          HerbDetailsScreen(herbName: 'Aloe Vera'),
+                    ),
+                  );
+                },
+                width: double.infinity,
+              ),
               const SizedBox(height: 10),
-              buildPlantCard('Henna', 'lib/frontend/assets/images/Henna.jpg',
-                  width: double.infinity),
+              buildPlantCard(
+                'Henna',
+                'lib/frontend/assets/images/Henna.jpg',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          HerbDetailsScreen(herbName: 'Aloe Vera'),
+                    ),
+                  );
+                },
+                width: double.infinity,
+              ),
             ],
           ),
         ),
@@ -220,13 +335,17 @@ class _FrontScreenState extends State<FrontScreen> {
     );
   }
 
-  Widget buildPlantCard(String title, String imagePath, {double width = 150}) {
+  Widget buildPlantCard(String title, String imagePath, VoidCallback onTap,
+      {double width = 150}) {
     return Padding(
-      padding: const EdgeInsets.all(8.0), // Adjust padding around each card
-      child: PlantCard(
-        title: title,
-        imagePath: imagePath,
-        width: width,
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: onTap,
+        child: PlantCard(
+          title: title,
+          imagePath: imagePath,
+          width: width,
+        ),
       ),
     );
   }

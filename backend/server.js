@@ -3,14 +3,20 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const plantsRoutes = require('./routes/plants'); // Plant routes
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(bodyParser.json()); // To parse JSON request bodies
 
-// MongoDB connection string
-const uri = "mongodb://localhost:27017/herbalhub";
-
+// MongoDB connection
+const uri = process.env.MONGO_URI || "mongodb://localhost:27017/Herbal";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on('connected', () => {
@@ -77,8 +83,11 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Server setup
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// Plant routes for fetching plant data
+app.use('/plants', plantsRoutes); // Routes for managing plants
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

@@ -195,15 +195,15 @@ class CategoryCard extends StatelessWidget {
 }
 
 final List<Map<String, String>> categories = [
-  {'title': 'Type', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
-  {'title': 'Medicine', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
+  {'title': 'Type', 'imagePath': 'lib/frontend/assets/images/type.jpg'},
+  {'title': 'Medicine', 'imagePath': 'lib/frontend/assets/images/medicine.jpg'},
   {
     'title': 'Medicinal Properties',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
+    'imagePath': 'lib/frontend/assets/images/mp.jpg'
   },
-  {'title': 'Region', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
-  {'title': 'Parts', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
-  {'title': 'Endangered', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
-  {'title': 'Growth', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
-  {'title': 'Lifespan', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
+  {'title': 'Region', 'imagePath': 'lib/frontend/assets/images/region.jpg'},
+  {'title': 'Parts', 'imagePath': 'lib/frontend/assets/images/parts.jpg'},
+  {'title': 'Endangered', 'imagePath': 'lib/frontend/assets/images/ed.jpg'},
+  {'title': 'Growth', 'imagePath': 'lib/frontend/assets/images/growth.jpg'},
+  {'title': 'Lifespan', 'imagePath': 'lib/frontend/assets/images/lifespan.jpg'},
 ];

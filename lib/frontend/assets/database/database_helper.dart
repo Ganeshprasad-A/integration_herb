@@ -20,11 +20,11 @@ class DatabaseHelper {
 
   Future<Database> _initializeDatabase() async {
     final documentsDirectory = await getApplicationDocumentsDirectory();
-    final dbPath = join(documentsDirectory.path, 'greeni.db');
+    final dbPath = join(documentsDirectory.path, 'need.db');
 
     if (!await File(dbPath).exists()) {
       ByteData data =
-          await rootBundle.load('lib/frontend/assets/database/greeni.db');
+          await rootBundle.load('lib/frontend/assets/database/need.db');
       List<int> bytes =
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes);
@@ -37,7 +37,7 @@ class DatabaseHelper {
     try {
       final db = await database;
       final result = await db.query(
-        'greeni', // Table name
+        'need', // Table name
         where: 'name = ?', // Filtering condition
         whereArgs: [name], // Dynamic argument
       );

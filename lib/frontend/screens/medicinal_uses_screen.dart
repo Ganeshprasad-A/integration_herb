@@ -52,9 +52,9 @@ class MedicinalUsesScreen extends StatelessWidget {
               child: ListView(
                 children: const [
                   HerbalCard(
-                    title: 'Tulsi',
-                    description: 'Reduces stress and boosts immunity',
-                    imagePath: 'lib/frontend/assets/images/tulsi.jpeg',
+                    title: 'Amla',
+                    description: 'Anti-Oxidant',
+                    imagePath: 'lib/frontend/assets/images/Amla.jpg',
                   ),
                   HerbalCard(
                     title: 'Hibiscus',
@@ -64,17 +64,17 @@ class MedicinalUsesScreen extends StatelessWidget {
                   HerbalCard(
                     title: 'Kutki',
                     description: 'Supports liver health and digestion',
-                    imagePath: 'lib/frontend/assets/images/kutki.jpeg',
+                    imagePath: 'lib/frontend/assets/images/Kutki.jpg',
                   ),
                   HerbalCard(
                     title: 'Saffron',
                     description: 'Improves mood, memory, and skin health',
-                    imagePath: 'lib/frontend/assets/images/saffron.jpeg',
+                    imagePath: 'lib/frontend/assets/images/saffron.jpg',
                   ),
                   HerbalCard(
                     title: 'Sarpagandha',
                     description: 'Reduces hypertension and anxiety',
-                    imagePath: 'lib/frontend/assets/images/sarpagandha.jpeg',
+                    imagePath: 'lib/frontend/assets/images/Sarpagandha.jpg',
                   ),
                 ],
               ),

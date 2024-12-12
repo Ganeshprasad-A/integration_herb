@@ -223,7 +223,7 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Image.asset(
-              'lib/frontend/assets/images/home_page_logo.png',
+              'lib/frontend/assets/images/ayushlogo.png',
               height: 150,
             ),
             const SizedBox(height: 20),

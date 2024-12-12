@@ -34,7 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.21.208.158:3000/login'), // Replace with your backend URL
+        Uri.parse(
+            'http://10.21.208.200:3000/login'), // Replace with your backend URL
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'username': username, 'password': password}),
       );
@@ -47,7 +48,8 @@ class _LoginScreenState extends State<LoginScreen> {
         // Login successful
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const FrontScreen()),
+          MaterialPageRoute(
+              builder: (context) => const BookmarkedPlantsScreen()),
         );
       } else if (response.statusCode == 404) {
         // User not found
@@ -74,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.21.208.158:3000/register'), // Replace with your backend URL
+        Uri.parse(
+            'http://10.21.208.200:3000/register'), // Replace with your backend URL
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'username': username, 'password': password}),
       );
@@ -149,81 +152,84 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    resizeToAvoidBottomInset: true, // Avoid overflow when keyboard appears
-    backgroundColor: const Color(0xFFE7F6D4),
-    body: SafeArea(
-      child: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Logo
-                Image.asset(
-                  'lib/frontend/assets/images/home_page_logo.png',
-                  height: 200,
-                ),
-                const SizedBox(height: 40),
-                // Username input
-                TextField(
-                  controller: _usernameController,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: const Color(0xFFD7E9B9),
-                    hintText: 'Enter username or email',
-                    prefixIcon: Icon(Icons.person, color: Colors.green.shade700),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide.none,
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: true, // Avoid overflow when keyboard appears
+      backgroundColor: const Color(0xFFE7F6D4),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Logo
+                  Image.asset(
+                    'lib/frontend/assets/images/ayushlogo.png',
+                    height: 200,
+                  ),
+                  const SizedBox(height: 40),
+                  // Username input
+                  TextField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: const Color(0xFFD7E9B9),
+                      hintText: 'Enter username or email',
+                      prefixIcon:
+                          Icon(Icons.person, color: Colors.green.shade700),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 20),
-                // Password input
-                TextField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: const Color(0xFFD7E9B9),
-                    hintText: 'Enter password',
-                    prefixIcon: Icon(Icons.lock, color: Colors.green.shade700),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide.none,
+                  const SizedBox(height: 20),
+                  // Password input
+                  TextField(
+                    controller: _passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: const Color(0xFFD7E9B9),
+                      hintText: 'Enter password',
+                      prefixIcon:
+                          Icon(Icons.lock, color: Colors.green.shade700),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 30),
-                // Login button
-                ElevatedButton(
-                  onPressed: _isLoading ? null : loginUser,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  const SizedBox(height: 30),
+                  // Login button
+                  ElevatedButton(
+                    onPressed: _isLoading ? null : loginUser,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 50),
                     ),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 50),
+                    child: _isLoading
+                        ? const CircularProgressIndicator(color: Colors.white)
+                        : const Text(
+                            'Login',
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ),
                   ),
-                  child: _isLoading
-                      ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text(
-                          'Login',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                ),
-                const SizedBox(height: 20),
-              ],
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
           ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

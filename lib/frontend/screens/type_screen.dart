@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'herb_details_screen.dart'; // Make sure this import is correct for your project
+import 'plant_detail_screen.dart';
 
 class TypeScreen extends StatelessWidget {
   const TypeScreen({Key? key}) : super(key: key);
@@ -53,71 +53,43 @@ class TypeScreen extends StatelessWidget {
               child: ListView(
                 children: [
                   HerbalCard(
-                    title: 'Aloe Vera',
-                    description: 'Reduces stress and boosts immunity',
+                    title: 'Tulsi',
+                    description: 'Immunity Booster',
                     imagePath: 'lib/frontend/assets/images/tulsi.jpeg',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              HerbDetailsScreen(herbName: 'Aloe Vera'),
+                              PlantDetailScreen(plantName: 'Tulsi'),
                         ),
                       );
                     },
                   ),
                   HerbalCard(
-                    title: 'Hibiscus',
-                    description: 'Lowers blood pressure and cholesterol',
-                    imagePath: 'lib/frontend/assets/images/tulsi.jpeg',
+                    title: 'Ashwagandha',
+                    description: 'Stress Reduction , Energy Booster',
+                    imagePath: 'lib/frontend/assets/images/Ashwagandha.jpg',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              HerbDetailsScreen(herbName: 'Neem'),
+                              PlantDetailScreen(plantName: 'Ashwagandha'),
                         ),
                       );
                     },
                   ),
                   HerbalCard(
-                    title: 'Kutki',
-                    description: 'Supports liver health and digestion',
-                    imagePath: 'lib/frontend/assets/images/tulsi.jpeg',
+                    title: 'Brahmi',
+                    description: 'Memory Enhancer',
+                    imagePath: 'lib/frontend/assets/images/Brahmi.jpg',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              HerbDetailsScreen(herbName: 'Aloe Vera'),
-                        ),
-                      );
-                    },
-                  ),
-                  HerbalCard(
-                    title: 'Saffron',
-                    description: 'Improves mood, memory, and skin health',
-                    imagePath: 'lib/frontend/assets/images/tulsi.jpeg',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              HerbDetailsScreen(herbName: 'Tulsi'),
-                        ),
-                      );
-                    },
-                  ),
-                  HerbalCard(
-                    title: 'Sarpagandha',
-                    description: 'Reduces hypertension and anxiety',
-                    imagePath: 'lib/frontend/assets/images/tulsi.jpeg',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              HerbDetailsScreen(herbName: 'Tulsi'),
+                              PlantDetailScreen(plantName: 'Brahmi'),
                         ),
                       );
                     },
@@ -136,20 +108,20 @@ class HerbalCard extends StatelessWidget {
   final String title;
   final String description;
   final String imagePath;
-  final VoidCallback onTap; // Added onTap for handling navigation
+  final VoidCallback onTap;
 
   const HerbalCard({
     required this.title,
     required this.description,
     required this.imagePath,
-    required this.onTap, // onTap is required to handle taps
+    required this.onTap,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap, // GestureDetector listens for taps
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(bottom: 16.0),
         height: 150,

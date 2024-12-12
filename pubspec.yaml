@@ -37,12 +37,17 @@ dependencies:
   convex_bottom_bar: ^3.2.0
   curved_navigation_bar: ^1.0.3
   shared_preferences: ^2.0.17
+  http: ^1.2.2
+  provider: ^6.1.2
+  dio: ^5.7.0
+  video_player: ^2.9.2
+  audioplayers: ^6.1.0
+  model_viewer_plus: ^1.9.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  http: ^1.2.2
   fluttertoast: ^8.2.8
 
 dev_dependencies:
@@ -100,7 +105,7 @@ flutter:
   assets:
     - lib/frontend/assets/images/home_page_logo.png
     - lib/frontend/assets/images/tulsi.jpeg
-    - lib/frontend/assets/database/greeni.db
+    - lib/frontend/assets/database/need.db
     - lib/frontend/assets/images/aloevera.jpeg
     - lib/frontend/assets/images/neem.jpeg
     - lib/frontend/assets/images/ginger.jpeg

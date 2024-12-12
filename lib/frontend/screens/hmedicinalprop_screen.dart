@@ -188,29 +188,26 @@ class CategoryCard extends StatelessWidget {
 }
 
 final List<Map<String, String>> categories = [
-  {
-    'title': 'Rasa(Taste)',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
-  },
+  {'title': 'Rasa(Taste)', 'imagePath': 'lib/frontend/assets/images/rasa.jpg'},
   {
     'title': 'Madhura(Sweet)',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
+    'imagePath': 'lib/frontend/assets/images/sweet.jpg'
   },
-  {'title': 'Amla(Sour)', 'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'},
+  {'title': 'Amla(Sour)', 'imagePath': 'lib/frontend/assets/images/sour.jpg'},
   {
     'title': 'Lavana(Salty)',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
+    'imagePath': 'lib/frontend/assets/images/salty.jpg'
   },
   {
     'title': 'Katu(Pungent)',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
+    'imagePath': 'lib/frontend/assets/images/pungent.jpg'
   },
   {
     'title': 'Tikta(Bitter)',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
+    'imagePath': 'lib/frontend/assets/images/bitter.jpg'
   },
   {
     'title': 'Kashaya(Astringent)',
-    'imagePath': 'lib/frontend/assets/images/tulsi.jpeg'
+    'imagePath': 'lib/frontend/assets/images/asringent.jpg'
   },
 ];
